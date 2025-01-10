@@ -1,84 +1,15 @@
+
 <?php echo get_header(); ?>
 
-<div class="hero__SECTION secondarySection_spacing">
-    <div class="hero_section__CONTENT_WRAPPER">
-        <header class="header__BLOCK">
-            <div class="header__BLOCK__CONTENT_WRAPPER">
-                <div class="header_logo__WRAPPER">
-                    <a href="/" class="header_logo__BTN" aria-label="agency logo that leads to home page">
-                        <img src="<?php echo get_theme_file_uri("/assets/media/logo.webp"); ?>" alt="PMwebmasters">
-                    </a>
-                </div>
+<div class="hero__SECTION">
+    <div class="hero__bg_decoration__BLOCK">
+        <div class="hero__noiseCanvas__WRAPPER">
+            <canvas id="openSimplexNoise__CANVAS"></canvas>
+        </div>
+    </div>
 
-                <div class="header_leftside__BLOCK">
-                    <nav class="navbar__BLOCK">
-                        <ul class="navbar_links__LIST">
-                            <li class="navbar_link__ITEM">
-                                <a href="#Digital_challenges" class="navbar_link__EL mid_sz">[ Challenges ]</a>
-                            </li>
-                            <li class="navbar_link__ITEM">
-                                <a href="#OurServices" class="navbar_link__EL mid_sz">[ Our Services ]</a>
-                            </li>
-                            <li class="navbar_link__ITEM">
-                                <a href="#CaseStudies" class="navbar_link__EL mid_sz">[ Our Work ]</a>
-                            </li>
-                            <li class="navbar_link__ITEM">
-                                <a href="#FrequentlyAskedQuestions" class="navbar_link__EL mid_sz">[ FAQ ]</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div class="header_ctas__CONTAINER">
-                        <a href="#ContactUs" class="header_cta__BTN contact_cta__BTN">
-                            <div class="header_cta__CONTENT_WRAPPER">
-                                <span class="header_cta__CONTENT mid_sz">let's talk</span>
-                                <i class="icon__EL directionary_arrow__ICON"
-                                    style="background-image:url(<?php echo get_theme_file_uri('/assets/media/icons/directionary_arrow__DARK.png') ?>)"></i>
-                            </div>
-                        </a>
-                        <button class="header_cta__BTN multilang_cta__BTN" data-open="false">
-                            <div class="multilang_cta__CONTENT_WRAPPER">
-                                <div class="multilang_cta__HEADING_BLOCK">
-                                    <div class="multilang_cta__heading_block__CONTENT_WRAPPER">
-                                        <span class="multilang_cta__HEADING_TYPO mid_sz">English</span>
-                                        <i class="icon__EL expand_arrow__ICON"
-                                        style="background-image:url(<?php echo get_theme_file_uri('/assets/media/icons/expansion_arrow__LIGHT.png') ?>)"></i>
-                                    </div>
-                                </div>
-
-                                <div class="desktop_multilangs__Dropdown__BLOCK" aria-hidden="true">
-                                    <div class="desktop_multilangs__Dropdown__CONTENT_WRAPPER">
-                                        <ul class="desktop_multilangs__LIST">
-                                            <li class="other_lang__LIST_ITEM">
-                                                <a href="/" class="other_lang__ITEM__LINK">
-                                                    <span class="other_lang__ITEM__TYPO mid_sz">Francais</span>
-                                                </a>
-                                            </li>
-                                            <li class="other_lang__LIST_ITEM">
-                                                <a href="/" class="other_lang__ITEM__LINK">
-                                                    <span class="other_lang__ITEM__TYPO mid_sz">Spanish</span>
-                                                </a>
-                                            </li>
-                                            <li class="other_lang__LIST_ITEM">
-                                                <a href="/" class="other_lang__ITEM__LINK">
-                                                    <span class="other_lang__ITEM__TYPO mid_sz">Arabic</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                
-                <button class="mobile_nav_menu__OPEN_MENU__BTN">
-                    <div class="mobile_nav_menu__OPEN_MENU__ICON_WRAPPER">
-                        <span class="mobile_nav_menu__OPENING_BAR"></span>
-                    </div>
-                </button>
-            </div>
-        </header>
+    <div class="hero_section__CONTENT_WRAPPER secondarySection_spacing">
+        <?php get_template_part("/template-parts/Global/Header"); ?>
 
         <div class="hero_brandIntroduction__BLOCK">
             <div class="hero_brandIntroduction__CONTENT_WRAPPER">
@@ -312,62 +243,54 @@
     </div>
 </section>
 
-<section class="caseStudies__SECTION" id="CaseStudies">
-    <div class="caseStudies__CONTENT_WRAPPER generalSection_spacing">
-        <div class="caseStudies__SECTION__HEADER">
-            <div class="caseStudies_section_header__CONTENT_WRAPPER">
-                <span class="caseStudies_section__EYEBROW upperMid_sz">[ Case Studies ]</span>
-                <h2 class="caseStudies_section__TITLE xxl_sz">See How We’ve <mark class="pureSkyBlue__HIGHLIGHTER">Solved</mark> Digital Challenges for Businesses Just Like Yours</h2>
-            </div>
-        </div>
+<?php 
+    $projects = new WP_Query(array(
+        "post_type" => "project",
+        "posts_per_page" => 2
+    ));
 
-        <div class="caseStudies__STUDIES_BLOCK">
-            <div class="caseStudies_studies__CONTENT_WRAPPER">
-                <div class="caseStudies__CARDS_CONTAINER">
-                    <article class="caseStudy__CARD">
-                        <a href="/" class="caseStudy_card__LINK">
-                            <div class="caseStudy_card__CONTENT_CONTAINER">
-                                <div class="caseStudy_card__THUMBNAIL_CONTAINER">
-                                    <img src="<?php echo get_theme_file_uri('/assets/media/thumbnails/caseStudies/caseStudy_Thumbnail.webp') ?>" alt="aa" />
-                                </div>
-                                <div class="caseStudy_card__TYPOS_CONTAINER">
-                                    <h3 class="caseStudy_card__TITLE lg_sz">Film production tool used by Hollywood’s biggest studios</h3>
-                                    <p class="caseStudy_card__DESCRIPTION mid_sz">Streamlining creative collaboration in film, TV, and theater productions with a powerful digital tool.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="caseStudy__CARD">
-                        <a href="/" class="caseStudy_card__LINK">
-                            <div class="caseStudy_card__CONTENT_CONTAINER">
-                                <div class="caseStudy_card__THUMBNAIL_CONTAINER">
-                                    <img src="<?php echo get_theme_file_uri('/assets/media/thumbnails/caseStudies/caseStudy_Thumbnail.webp') ?>" alt="aa" />
-                                </div>
-                                <div class="caseStudy_card__TYPOS_CONTAINER">
-                                    <h3 class="caseStudy_card__TITLE lg_sz">Film production tool used by Hollywood’s biggest studios</h3>
-                                    <p class="caseStudy_card__DESCRIPTION mid_sz">Streamlining creative collaboration in film, TV, and theater productions with a powerful digital tool.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="caseStudy__CARD">
-                        <a href="/" class="caseStudy_card__LINK">
-                            <div class="caseStudy_card__CONTENT_CONTAINER">
-                                <div class="caseStudy_card__THUMBNAIL_CONTAINER">
-                                    <img src="<?php echo get_theme_file_uri('/assets/media/thumbnails/caseStudies/caseStudy_Thumbnail.webp') ?>" alt="aa" />
-                                </div>
-                                <div class="caseStudy_card__TYPOS_CONTAINER">
-                                    <h3 class="caseStudy_card__TITLE lg_sz">Film production tool used by Hollywood’s biggest studios</h3>
-                                    <p class="caseStudy_card__DESCRIPTION mid_sz">Streamlining creative collaboration in film, TV, and theater productions with a powerful digital tool.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
+    if($projects->have_posts()){
+?>
+    <section class="caseStudies__SECTION" id="CaseStudies">
+        <div class="caseStudies__CONTENT_WRAPPER generalSection_spacing">
+            <div class="caseStudies__SECTION__HEADER">
+                <div class="caseStudies_section_header__CONTENT_WRAPPER">
+                    <span class="caseStudies_section__EYEBROW upperMid_sz">[ Case Studies ]</span>
+                    <h2 class="caseStudies_section__TITLE xxl_sz">See How We’ve <mark class="pureSkyBlue__HIGHLIGHTER">Solved</mark> Digital Challenges for Businesses Just Like Yours</h2>
+                </div>
+            </div>
+
+            <div class="caseStudies__STUDIES_BLOCK">
+                <div class="caseStudies_studies__CONTENT_WRAPPER">
+                    <div class="caseStudies__CARDS_CONTAINER">
+                        <?php 
+                            while($projects->have_posts()){
+                                $projects->the_post();
+                        ?>
+                            <article class="caseStudy__CARD">
+                                <a href="<?php echo get_field("project_link"); ?>" target="_blank" class="caseStudy_card__LINK">
+                                    <div class="caseStudy_card__CONTENT_CONTAINER">
+                                        <div class="caseStudy_card__THUMBNAIL_CONTAINER">
+                                            <img src="<?php echo get_field("project_thumbnail"); ?>" alt="aa" />
+                                        </div>
+                                        <div class="caseStudy_card__TYPOS_CONTAINER">
+                                            <h3 class="caseStudy_card__TITLE lg_sz"><?php the_title(); ?></h3>
+                                            <p class="caseStudy_card__DESCRIPTION mid_sz"><?php echo get_the_content(); ?></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        <?php
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php
+    }
+?>
 
 <section class="FrequentlyAskedQuestions__SECTION" id="FrequentlyAskedQuestions">
     <div class="FrequentlyAskedQuestions__CONTENT_WRAPPER generalSection_spacing">

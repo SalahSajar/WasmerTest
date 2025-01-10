@@ -6,7 +6,10 @@
 	    --main-light-color--RGB: 236, 248, 254;
 
 	    --rich-dark-blue: #000928;
+	    --rich-dark-blue--RGB: 0, 9, 40;
+	    
 	    --secondary-rich-dark-blue: #0b1742;
+	    --secondary-rich-dark-blue--RGB: 11, 23, 66;
 
 	    --pure-sky-blue:  #0DA6E7;
 	    --light-sky-blue: #A6E1FA;
